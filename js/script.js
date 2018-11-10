@@ -34,3 +34,7 @@ const listener = () => {
 };
 
 document.addEventListener('DOMContentLoaded', listener);
+
+a.forEach(element => {
+	
+});

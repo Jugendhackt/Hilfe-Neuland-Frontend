@@ -5,7 +5,8 @@
     <meta charset="utf-8" />
     <title>Hilfe, Neuland!</title>
     <link rel="stylesheet" href="css/style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/checkbox.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
@@ -16,17 +17,32 @@
     <main>
         <div id="nextQuestion">
             <h2>Fragen</h2>
-            <h3>Bewegt sich die Maus?</h3>
+            <!-- <h3>Bewegt sich die Maus?</h3>
             <ul class="choices">
                 <li><button data-id="true">Ja</button></li>
                 <li><button data-id="false">Nein</button></li>
+            </ul> -->
+            <h3>Markiere deine Probleme</h3>
+            <ul class="choices">
+                <li>
+                    <label class="container">Unerwartetes Bild
+                        <input type="checkbox" name="unerwartetesBild" />
+                        <span class="checkmark"></span>
+                    </label>
+                </li>
+                <li>
+                    <label class="container">Unerwartetes Bild
+                        <input type="checkbox" name="unerwartetesBild" />
+                        <span class="checkmark"></span>
+                    </label>
+                </li>
+                <li><button data-id="false">Abschicken</button></li>
             </ul>
         </div>
         <div id="issues">
             <h2>Mögliche Lösungen</h2>
             <p>Noch keine Lösungen. Bitte beantworte mehr Fragen</p>
         </div>
-
     </main>
 
     <script src="js/script.js"></script>

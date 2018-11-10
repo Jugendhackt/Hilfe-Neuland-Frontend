@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
@@ -62,7 +66,7 @@ main #issues {
 
     main div {
         margin: 0;
-        padding: 0;
+        padding: 5px;
     }
 
     main #nextQuestion {
@@ -97,6 +101,7 @@ main div ul li button {
     border-radius: 28px;
     border: 1px solid grey;
     width: 100%;
+    max-width: 100%;
     height: 60px;
     cursor: pointer;
     font-size: 125%;
