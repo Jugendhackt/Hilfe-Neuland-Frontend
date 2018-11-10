@@ -101,3 +101,7 @@ main div ul li button {
     cursor: pointer;
     font-size: 125%;
 }
+
+main div ul li button:hover {
+    background-color: #CCCCCC;
+}
