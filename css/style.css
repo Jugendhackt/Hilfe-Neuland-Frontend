@@ -8,7 +8,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: orange;
+    background-color: orangered;
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
 }
 
@@ -32,6 +32,7 @@ main {
 }
 
 main div {
+    background-color: orange;
     margin: 10px;
     padding: 5px;
 }
@@ -39,14 +40,16 @@ main div {
 main #nextQuestion {
     border: 1px solid;
     width: 60%;
+    max-width: 720px;
 }
 
 main #issues {
     border: 1px solid;
     width: 40%;
+    max-width: 480px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
     main {
         padding: 5px;
         display: block;
@@ -58,9 +61,11 @@ main #issues {
     main #nextQuestion {
         width: 100%;
         margin-bottom: 5px;
+        max-width: 100%;
     }
     main #issues {
         width: 100%;
+        max-width: 100%;
     }
 }
 
@@ -80,6 +85,8 @@ main div ul li {
 }
 
 main div ul li button {
+    background-color: gainsboro;
     width: 100%;
     height: 60px;
+    cursor: pointer;
 }
