@@ -2,13 +2,14 @@ body {
     margin: 0;
     padding: 0;
     width: 100vw;
+    background-color: #F0F0F0;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: orangered;
+    background-color: orange;
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
 }
 
@@ -32,19 +33,19 @@ main {
 }
 
 main div {
-    background-color: orange;
+    box-shadow: 3px 6px grey;
+    background-color: gainsboro;
+    border: 1px solid grey;
     margin: 10px;
     padding: 5px;
 }
 
 main #nextQuestion {
-    border: 1px solid;
     width: 60%;
     max-width: 720px;
 }
 
 main #issues {
-    border: 1px solid;
     width: 40%;
     max-width: 480px;
 }
