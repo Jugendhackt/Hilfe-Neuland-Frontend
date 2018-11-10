@@ -1,40 +1,55 @@
-let questionaire = {};
+async function getStarter() {
+	try {
+		const request = await fetch(`http://172.22.42.122:3000/starters`);
+		const data = await request.json();
 
-const listener = () => {
-	[...document.querySelectorAll('ul.choices li')].forEach((el) => el.addEventListener('click', async (e) => {
-		const id = e.target.getAttribute('data-id');
-		const text = e.target.innerHTML;
+		document.querySelector("#nextQuestion").innerHTML = '<h2>Fragen</h2><h3>Markiere deine Probleme</h3><ul class="choices"></ul>';
+		data.forEach(element => {
+			document.querySelector(".choices").innerHTML += '<li><label class="container">' + element.text + '<input type="checkbox" name="' + element._id + '" /><span class="checkmark"></span></label></li>';
+		});
+		document.querySelector(".choices").innerHTML += '<li><button onClick="auswerten();">Abschicken</button></li>';
+	} catch (e) {
+		console.error('fetch error', e);
+	}
+}
 
-		if (!questionaire.text) {
-			try {
-				const request = await fetch(`http://localhost:3000/questionaire?set=${id}`);
-				const data = await request.json();
-				questionaire = data;
-			}
-			catch (e) {
-				console.error('fetch error', e);
-			}
-		}
-		
-		if (questionaire.then) {
-			document.querySelector('ul.choices').innerHTML = questionaire.then;
-		}
-		else {
-			document.querySelector('ul.choices').innerHTML = '';
-			document.querySelector('h2.question').innerHTML = questionaire.text;
-			questionaire.options.forEach((option) => {
-				const el = document.createElement('li');
-				el.innerHTML = option.text;
-				document.querySelector('ul.choices').appendChild(el);
-			});
-			questionaire = questionaire.options.find((option) => option.text === text) || questionaire;
-			listener();
-		}
-	}));
-};
+var ids = []
 
-document.addEventListener('DOMContentLoaded', listener);
+function auswerten() {
+	console.log("auswerten");
+	ids.push(...[...document.querySelectorAll("input")]
+		.filter(element => element.checked)
+		.map(element => element.getAttribute('name')));
+	console.log(ids)
+	send();
+}
 
-a.forEach(element => {
-	
-});
+async function send() {
+	try {
+		const request = await fetch(`http://172.22.42.122:3000/symptoms`, {
+			method: "POST", // *GET, POST, PUT, DELETE, etc.
+			headers: {
+				"Content-Type": "application/json",
+				"Access-Control-Allow-Origin": "*",
+				"Accept": "*/*"
+
+				// "Content-Type": "application/x-www-form-urlencoded",
+			},
+			body: JSON.stringify({
+				symptoms: ids
+			}),
+		});
+		const data = await request.json();
+		console.log(data);
+
+		document.querySelector("#nextQuestion").innerHTML = '<h2>Fragen</h2><h3>Markiere deine Probleme</h3><ul class="choices"></ul>';
+		data.symptoms.forEach(element => {
+			document.querySelector(".choices").innerHTML += '<li><label class="container">' + element.text + '<input type="checkbox" name="' + element._id + '" /><span class="checkmark"></span></label></li>';
+		});
+		document.querySelector(".choices").innerHTML += '<li><button onClick="auswerten();">Abschicken</button></li>';
+	} catch (e) {
+		console.error('fetch error', e);
+	}
+}
+
+getStarter();
