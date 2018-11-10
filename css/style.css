@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
 body {
+    font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -37,7 +40,8 @@ main div {
     background-color: gainsboro;
     border: 1px solid grey;
     margin: 10px;
-    padding: 5px;
+    padding: 15px;
+    border-radius: 4px;
 }
 
 main #nextQuestion {
@@ -55,15 +59,18 @@ main #issues {
         padding: 5px;
         display: block;
     }
+
     main div {
         margin: 0;
         padding: 0;
     }
+
     main #nextQuestion {
         width: 100%;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
         max-width: 100%;
     }
+
     main #issues {
         width: 100%;
         max-width: 100%;
@@ -86,8 +93,11 @@ main div ul li {
 }
 
 main div ul li button {
-    background-color: gainsboro;
+    background-color: #FBFBFB;
+    border-radius: 28px;
+    border: 1px solid grey;
     width: 100%;
     height: 60px;
     cursor: pointer;
+    font-size: 125%;
 }
