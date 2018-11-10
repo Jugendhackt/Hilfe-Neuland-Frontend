@@ -27,13 +27,10 @@ function auswerten() {
 async function send() {
 	try {
 		const request = await fetch(`http://172.22.42.122:3000/symptoms`, {
-			method: "POST", // *GET, POST, PUT, DELETE, etc.
+			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 				"Access-Control-Allow-Origin": "*",
-				"Accept": "*/*"
-
-				// "Content-Type": "application/x-www-form-urlencoded",
 			},
 			body: JSON.stringify({
 				symptoms: ids
