@@ -52,7 +52,7 @@ async function send() {
 		});
 		const data = await request.json();
 
-		document.querySelector('#nextQuestion h3').innerHTML = 'Bitte wählen Sie zutreffendes aus.';
+		document.querySelector('#nextQuestion h3').innerHTML = 'Bitte wählen Sie Zutreffendes aus.';
 		choices.innerHTML = '';
 
 		if (data.symptoms.length === 0) {
