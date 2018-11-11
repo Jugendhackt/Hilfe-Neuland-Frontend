@@ -91,6 +91,7 @@ async function send() {
 		li.appendChild(button);
 		choices.appendChild(li);
 
+		issues.innerHTML = '';
 		data.bestIssues.forEach((element, i) => {
 			const li = document.createElement('li');
 			const h3 = document.createElement('h3');
