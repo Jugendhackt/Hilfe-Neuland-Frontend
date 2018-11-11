@@ -1,4 +1,4 @@
-const host = 'http://172.22.42.122:3000';
+const host = 'http://192.168.43.181:3000';
 
 const choices = document.querySelector('.choices');
 const nextQuestion = document.querySelector('#nextQuestion');
@@ -39,7 +39,7 @@ function auswerten() {
 
 async function send() {
 	try {
-		const request = await fetch(`http://172.22.42.122:3000/symptoms`, {
+		const request = await fetch(`${host}/symptoms`, {
 			method: "POST",
 			"Access-Control-Allow-Origin": "*",
 			headers: {
