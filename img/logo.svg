@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="497"
+   height="316"
+   viewBox="0 0 1988 1264"
+   version="1.1"
+   id="svg3764"
+   sodipodi:docname="Vulva hand-sign or 'yoni mudra'.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata3768">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     id="namedview3766"
+     showgrid="false"
+     inkscape:zoom="1.7025316"
+     inkscape:cx="248.5"
+     inkscape:cy="158"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3764" />
+  <title
+     id="title3753">Vulva hand-sign or &quot;yoni mudra&quot;</title>
+  <defs
+     id="defs3756">
+    <path
+       id="Half"
+       d="M960,52c0,14-70,245-126,341-42,73-119,155-119,245 0,111,105,122,161,164 34,31,82,98,82,148 0,24-13,30-24,30-11,0-22-9-30-15-38-27-60-63-103-84-26-12-52-18-81-18-48,0-84,13-125,15-47-2-86-26-135-26-94,47-132,279-209,356-64-59-172-148-239-219-4-4-5-9-5-15 0-24,64-117,111-170 107-129,166-161,254-256 50-52,69-60,101-96 27-29,37-60,62-93 19-27,59-64,109-101 29-20,52-33,59-33 5,0,7,4,7,9 0,11-71,91-72,93-22,25-84,115-84,120 0,5,5,10,10,10 4,0,7-2,9-4 121-176,38-53,151-200 10-12,20-44,30-55 30-34,61-51,68-51 6,0,11,5,11,11 0,16-39,96-99,178-26,35-82,102-82,122 0,5,4,10,10,10 3,0,7-3,9-6 27-63,128-152,180-291 3-8,4-14,4-21 1-18,16-43,41-109 7-19,19-41,34-41 9,0,30,9,30,52Z" />
+  </defs>
+  <use
+     transform="matrix(1,0,0,-0.86802974,22,1072.8848)"
+     xlink:href="#Half"
+     id="use3760"
+     x="0"
+     y="0"
+     width="100%"
+     height="100%" />
+  <use
+     transform="matrix(-1,0,0,-0.86802974,1966,1072.8848)"
+     xlink:href="#Half"
+     id="use3762"
+     x="0"
+     y="0"
+     width="100%"
+     height="100%" />
+</svg>
