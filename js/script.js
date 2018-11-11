@@ -1,13 +1,13 @@
 async function getStarter() {
 	try {
-		const request = await fetch(`http://192.168.43.181:3000/starters`);
+		const request = await fetch(`http://172.22.42.122:3000/starters`);
 		const data = await request.json();
 
-		document.querySelector("#nextQuestion").innerHTML = '<h2>Fragen</h2><h3>Markiere deine Probleme</h3><ul class="choices"></ul>';
+		// Fragen
+		document.querySelector("#nextQuestion").innerHTML = '<h2>Fragen</h2><h3>Beschreibe dein Problem</h3><ul class="choices"></ul>';
 		data.forEach(element => {
-			document.querySelector(".choices").innerHTML += '<li><label class="container">' + element.text + '<input type="checkbox" name="' + element._id + '" /><span class="checkmark"></span></label></li>';
+			document.querySelector(".choices").innerHTML += '<li><button onClick="ids.push(\'' + element._id + '\');send()" >' + element.text + '</button></li>';
 		});
-		document.querySelector(".choices").innerHTML += '<li><button onClick="auswerten();">Abschicken</button></li>';
 	} catch (e) {
 		console.error('fetch error', e);
 	}
@@ -26,7 +26,7 @@ function auswerten() {
 
 async function send() {
 	try {
-		const request = await fetch(`http://192.168.43.181:3000/symptoms`, {
+		const request = await fetch(`http://172.22.42.122:3000/symptoms`, {
 			method: "POST",
 			"Access-Control-Allow-Origin": "*",
 			headers: {
@@ -41,10 +41,11 @@ async function send() {
 		console.log(data);
 
 		// Fragen
-		document.querySelector("#nextQuestion").innerHTML = '<h2>Fragen</h2><h3>Beschreibe dein Problem</h3><ul class="choices"></ul>';
+		document.querySelector("#nextQuestion").innerHTML = '<h2>Fragen</h2><h3>Wähle zutreffendes aus</h3><ul class="choices"></ul>';
 		data.symptoms.forEach(element => {
-			document.querySelector(".choices").innerHTML += '<li><button onClick="ids.push(\'' + element._id + '\')" >' + element.text + '</button></li>';
+			document.querySelector(".choices").innerHTML += '<li><label class="container">' + element.text + '<input type="checkbox" name="' + element._id + '" /><span class="checkmark"></span></label></li>';
 		});
+		document.querySelector(".choices").innerHTML += '<li><button onClick="auswerten();">Abschicken</button></li>';
 
 		// Problemlösungen
 		document.querySelector("#issues").innerHTML = '<h2>Mögliche Lösungen</h2><ul id="issues-ul"></ul>';
