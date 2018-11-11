@@ -1,6 +1,6 @@
 async function getStarter() {
 	try {
-		const request = await fetch(`http://172.22.42.122:3000/starters`);
+		const request = await fetch(`http://192.168.43.181:3000/starters`);
 		const data = await request.json();
 
 		document.querySelector("#nextQuestion").innerHTML = '<h2>Fragen</h2><h3>Markiere deine Probleme</h3><ul class="choices"></ul>';
@@ -26,12 +26,13 @@ function auswerten() {
 
 async function send() {
 	try {
-		const request = await fetch(`http://172.22.42.122:3000/symptoms`, {
+		const request = await fetch(`http://192.168.43.181:3000/symptoms`, {
 			method: "POST",
+			"Access-Control-Allow-Origin": "*",
 			headers: {
-				"Content-Type": "application/json",
-				"Access-Control-Allow-Origin": "*",
+				"Content-Type": "application/json; charset=utf-8",
 			},
+
 			body: JSON.stringify({
 				symptoms: ids
 			}),
@@ -39,11 +40,18 @@ async function send() {
 		const data = await request.json();
 		console.log(data);
 
-		document.querySelector("#nextQuestion").innerHTML = '<h2>Fragen</h2><h3>Markiere deine Probleme</h3><ul class="choices"></ul>';
+		// Fragen
+		document.querySelector("#nextQuestion").innerHTML = '<h2>Fragen</h2><h3>Beschreibe dein Problem</h3><ul class="choices"></ul>';
 		data.symptoms.forEach(element => {
-			document.querySelector(".choices").innerHTML += '<li><label class="container">' + element.text + '<input type="checkbox" name="' + element._id + '" /><span class="checkmark"></span></label></li>';
+			document.querySelector(".choices").innerHTML += '<li><button onClick="ids.push(\'' + element._id + '\')" >' + element.text + '</button></li>';
 		});
-		document.querySelector(".choices").innerHTML += '<li><button onClick="auswerten();">Abschicken</button></li>';
+
+		// Problemlösungen
+		document.querySelector("#issues").innerHTML = '<h2>Mögliche Lösungen</h2><ul id="issues-ul"></ul>';
+		data.bestIssues.forEach(element => {
+			document.querySelector("#issues-ul").innerHTML += '<li><h3>' + element.text + '</h3><p>' + element.fix + '</p></li> <hr /> ';
+		});
+
 	} catch (e) {
 		console.error('fetch error', e);
 	}
