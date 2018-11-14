@@ -1,4 +1,4 @@
-const host = 'http://192.168.43.181:3000';
+const host = 'https://neuland-api.krmax44.de';
 
 const choices = document.querySelector('.choices');
 const nextQuestion = document.querySelector('#nextQuestion');
